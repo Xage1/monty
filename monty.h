@@ -60,7 +60,7 @@ typedef struct bus_s
 extern bus_t bus;
 
 void func_pint(stack_t **head, unsigned int counter);
-void func_push(stack_t **head, int value);
+void func_push(stack_t **head, unsigned int value);
 void func_pall(stack_t **head, unsigned int counter);
 void func_nop(stack_t **head, unsigned int counter);
 void func_add(stack_t **head, unsigned int counter);
@@ -77,7 +77,7 @@ void func_pchar(stack_t **head, unsigned int counter);
 void func_mod(stack_t **head, unsigned int counter);
 void func_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void func_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter);
-void addnode(stack_t **head, int n)
+void addnode(int n);
 void func_stack(stack_t **head, unsigned int counter);
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 

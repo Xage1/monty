@@ -7,7 +7,7 @@
  * Return: no return
  */
 
-void func_push(stack_t **head, int value)
+void func_push(stack_t **head, unsigned int value)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
