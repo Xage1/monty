@@ -1,6 +1,5 @@
 #include "monty.h"
 
-bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
  * main - monty code interpreter
@@ -17,6 +16,7 @@ int main(int argc, char *argv[])
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
+	bus_t bus = {NULL, NULL, NULL, 0};
 
 	if (argc != 2)
 	{
@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
 		read_line = getline(&content, &size, file);
 		bus.content = content;
 		counter++;
-		if (read_line > 0)
+
+		if (read_line > 0 && content[0] != '#' && content[0] != '\n')
 		{
 			execute(content, &stack, counter, file);
 		}
