@@ -72,10 +72,12 @@ void func_mul(stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
 void addqueue(stack_t **head, int n);
 void func_queue(stack_t **head, unsigned int counter);
-void func_rotl(stack_t **stack, unsigned int counter);
-void func_pstr(stack_t **stack, unsigned int counter);
-void func_pchar(stack_t **stack, unsigned int counter);
+void func_pstr(stack_t **head, unsigned int counter);
+void func_pchar(stack_t **head, unsigned int counter);
 void func_mod(stack_t **head, unsigned int counter);
+void func_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void func_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter);
+void addnode(stack_t **head, int n)
 void func_stack(stack_t **head, unsigned int counter);
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
 
