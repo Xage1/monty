@@ -1,41 +1,43 @@
 #include "monty.h"
 
 /**
- * func_mod - computes the remainder of division of the second top element
- *            of the stack by the top element
+ * func_mod - computes the rest of the division of the second
+ * top element of the stack by the top element of the stack
  * @head: stack head
  * @counter: line_number
  * Return: no return
- */
+*/
 
 void func_mod(stack_t **head, unsigned int counter)
 {
-	stack_t *temp;
+	stack_t *h;
+	int len = 0, aux;
 
-	if (*head == NULL || (*head)->next == NULL)
+	h = *head;
+	while (h)
 	{
-		fprintf(stderr, "L%u: can't mod, stack too short\n", counter);
+		h = h->next;
+		len++;
+	}
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-
-	temp = (*head)->next;
-
-	if ((*head)->n == 0)
+	h = *head;
+	if (h->n == 0)
 	{
-		fprintf(stderr, "L%u: division by zero\n", counter);
+		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-
-	temp->n %= (*head)->n;
-
-	*head = temp;
-	temp->prev = NULL;
-
-	free(*head);
+	aux = h->next->n % h->n;
+	h->next->n = aux;
+	*head = h->next;
+	free(h);
 }

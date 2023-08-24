@@ -14,8 +14,8 @@ void func_div(stack_t **head, unsigned int counter)
 	h = *head;
 	while (h)
 	{
-		len++;
 		h = h->next;
+		len++;
 	}
 
 	if (len < 2)

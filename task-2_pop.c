@@ -21,9 +21,6 @@ void func_pop(stack_t **head, unsigned int counter)
 	}
 
 	temp = *head;
-	*head = (*head)->next;
-	if (*head != NULL)
-		(*head)->prev = NULL;
-
+	*head = temp->next;
 	free(temp);
 }
