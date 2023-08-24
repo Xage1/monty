@@ -1,7 +1,5 @@
 #include "monty.h"
 
-extern stack_t *head;
-
 /**
  * addnode - Add a new node to the stack.
  * @n: The integer value to store in the new node.
@@ -9,6 +7,7 @@ extern stack_t *head;
 
 void addnode(int n)
 {
+	stack_t *head = NULL;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (!new_node)
