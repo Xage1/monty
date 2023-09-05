@@ -63,8 +63,8 @@ typedef struct bus_s
 extern bus_t bus;
 
 void func_pint(stack_t **head, unsigned int counter);
-void func_push(stack_t **head, unsigned int value);
-void func_pall(stack_t **head, unsigned int counter);
+void f_push(stack_t **head, unsigned int value);
+void f_pall(stack_t **head, unsigned int counter);
 void func_nop(stack_t **head, unsigned int counter);
 void func_add(stack_t **head, unsigned int counter);
 void func_swap(stack_t **head, unsigned int counter);
